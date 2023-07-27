@@ -105,7 +105,7 @@ puts "book2 rentals: #{book2.rentals}"
 
 puts "\n"
 puts '---- create a teacher ---'
-teacher = Teacher.new(22, 'chemistry', 'mr. smith')
+teacher = Teacher.new(22, 'mr. smith', 'chemistry')
 puts "teacher: #{teacher.name}"
 puts "teacher specialization: #{teacher.specialization}"
 puts "teacher rentals: #{teacher.rentals}"
