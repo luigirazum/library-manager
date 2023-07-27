@@ -14,13 +14,22 @@ person = Person.new(13, 'John', parent_permission: false)
 p person
 
 puts "\n"
+puts '# create a classroom \'1-B\''
+puts '# classroom_1b = Classroom.new(\'1-B\')'
+classroom_1b = Classroom.new('1-B')
+puts "classroom_1b: #{classroom_1b.label}"
+puts "classroom_1b students: #{classroom_1b.students}"
+
+puts "\n"
 puts '# create a student'
-puts '# student = Student.new(10, \'Kimberly\', false, \'1-A\')'
+puts '# student = Student.new(10, \'Kimberly\', false, classroom_1b)'
 puts '# the following is the \'student\' created'
-student = Student.new(10, 'Kimberly', false, '1-A')
+student = Student.new(10, 'Kimberly', false, classroom_1b)
 p student
 puts '# output for calling \'play_hooky\' method'
 puts student.play_hooky
+puts "classroom_1b: #{classroom_1b.label}"
+puts "classroom_1b students: #{classroom_1b.students}"
 
 puts "\n"
 puts '# create a teacher'
