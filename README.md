@@ -102,13 +102,56 @@ is a simple App created with Ruby using OOP (Object Oriented Programming) which 
     - Override `can_use_services?` so it always returns `true`.
   </details> <!-- #end-first-project-description-->
 
+  <details> <!-- #start-second-project-description-->
+    <summary>
+
+    #### 2️⃣ Use the <kbd>**Decorator**</kbd> design pattern.
+    </summary>
+
+    Think about how you can use two decorators in order to capitalize and trim people's names.
+
+    #### ✳️ Interface
+    - Create a class <kbd>Nameable</kbd>.
+    - Implement a method called `correct_name` that will raise a `NotImplementedError`.
+
+    #### ✳️ Turn your <kbd>Person</kbd> class to <kbd>Nameable</kbd>
+    - Make sure that your <kbd>Person</kbd> class inherits from <kbd>Nameable</kbd>
+    - Make sure that this class has a method `correct_name` implemented. It should simply return the `name` attribute.
+
+
+    #### ✳️ Prepare base <kbd>Decorator</kbd>
+    - Make sure that it inherits from <kbd>Nameable</kbd>.
+    - In the constructor assign a nameable object from params to an instance variable.
+    - Implement the `correct_name` method that returns the result of the `correct_name` method of the `@nameable`.
+
+
+    #### ✳️ Prepare <kbd>CapitalizeDecorator</kbd> and <kbd>TrimmerDecorator</kbd>
+    - For the <kbd>CapitalizeDecorator</kbd>:
+      - Create a class that inherits from the base <kbd>Decorator</kbd> class.
+      - Implement a method `correct_name` that capitalizes the output of `@nameable.correct_name`.
+    - For the <kbd>TrimmerDecorator</kbd>:
+      - Create a class that inherits from the base <kbd>Decorator</kbd> class.
+      - Implement a method `correct_name` that makes sure that the output of `@nameable.correct_name` has a maximum of 10 characters. If it's longer it should trim the word.
+
+    #### ✳️ See your `decorators` in action
+    Try the following code and check if you managed to decorate your person:
+
+    >```ruby
+    >person = Person.new(22, 'maximilianus')
+    >person.correct_name
+    >capitalizedPerson = CapitalizeDecorator.new(person)
+    >capitalizedPerson.correct_name
+    >capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+    >capitalizedTrimmedPerson.correct_name
+    >```
+  </details> <!-- #end-second-project-description-->
+
   <details> <!-- #start-tobe-implemented-features-->
     <summary>
 
     #### 🧑‍💻 to be implemented Features
     </summary>
 
-    #### Project 2️⃣🔹Use the <kbd>**Decorator**</kbd> design pattern.
     #### Project 3️⃣🔹Set up <kbd>Associations</kbd>.
     #### Project 4️⃣🔹Add basic UI.
     #### Project 5️⃣🔹 Refactoring the code.
