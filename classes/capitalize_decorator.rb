@@ -5,6 +5,6 @@ require_relative 'decorator'
 class CapitalizeDecorator < Decorator
   # Decorators may call parent implementation of the operation
   def correct_name
-    @nameable.correct_name.capitalize
+    @nameable.correct_name.capitalized
   end
 end
