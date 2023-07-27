@@ -24,7 +24,8 @@ puts "\n"
 puts '# create a student'
 puts '# student = Student.new(10, \'Kimberly\', false, classroom_1b)'
 puts '# the following is the \'student\' created'
-student = Student.new(10, 'Kimberly', false, classroom_1b)
+student = Student.new(10, 'Kimberly', false)
+student.classroom = classroom_1b
 p student
 puts '# output for calling \'play_hooky\' method'
 puts student.play_hooky
@@ -81,7 +82,8 @@ puts "classroom students: #{chemistry.students}"
 
 puts "\n"
 puts '---- create a student ---'
-student = Student.new(22, 'maximilianus', false, chemistry)
+student = Student.new(22, 'maximilianus', false)
+student.classroom = chemistry
 puts "student: #{student.name}"
 puts "student classroom: #{student.classroom.label}"
 puts "student rentals: #{student.rentals}"
