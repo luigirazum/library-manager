@@ -11,7 +11,7 @@ class Student < Person
   def initialize(age, name, parent_permission)
     super(age, name, parent_permission: parent_permission)
   end
-  
+
   def classroom=(classroom)
     @classroom = classroom
     classroom.students << self unless classroom.students.include?(self)
