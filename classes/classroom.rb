@@ -1,7 +1,7 @@
 class Classroom
   attr_reader :students
   attr_accessor :label
-  
+
   # a 'Classroom' <has-many> 'Student's
   # is set with @students = []
   def initialize(label)
