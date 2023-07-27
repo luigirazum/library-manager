@@ -1,6 +1,5 @@
 class Classroom
-  attr_reader :students
-  attr_accessor :label
+  attr_accessor :label, :students
 
   # a 'Classroom' <has-many> 'Student's
   # is set with @students = []
