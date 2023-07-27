@@ -11,7 +11,7 @@ class Student < Person
   def initialize(age, name, parent_permission, classroom)
     super(age, name, parent_permission: parent_permission)
     @classroom = classroom
-    @classroom.students.push(self) unless @classroom.students.include?(self)
+    @classroom.students << self unless @classroom.students.include?(self)
   end
 
   def play_hooky
