@@ -180,7 +180,7 @@ is a simple App created with Ruby using OOP (Object Oriented Programming) which 
     chemistry = Classroom.new('chemistry')
 
     # a student is created, he is in chemistry classroom
-    student = Student.new(22, chemistry, 'maximilianus')
+    student = Student.new(22, 'maximilianus', false, chemistry)
 
     # a book1 is created, it hasn't been rented
     book1 = Book.new('chemistry for nubbies', 'ruth green')
@@ -189,7 +189,7 @@ is a simple App created with Ruby using OOP (Object Oriented Programming) which 
     book2 = Book.new('chemistry advanced', 'john fitzgerald')
 
     # a teacher is created, with chemistry specialization
-    teacher = Teacher.new(22, 'chemistry', 'mr. smith')
+    teacher = Teacher.new(22, 'mr. smith', 'chemistry')
 
     # teacher rents book1 on may 25, 2023
     teacher.add_rental('05/25/2023', book1)
