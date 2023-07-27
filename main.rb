@@ -72,7 +72,7 @@ puts "classroom students: #{chemistry.students}"
 
 puts "\n"
 puts '---- create a student ---'
-student = Student.new(22, chemistry, 'maximilianus')
+student = Student.new(22, 'maximilianus', false, chemistry)
 puts "student: #{student.name}"
 puts "student classroom: #{student.classroom.label}"
 puts "student rentals: #{student.rentals}"
