@@ -51,9 +51,4 @@ class RentalsCollection < Collection
     person = persons.select(selected_person.to_i - 1)
     add_a_rental(book, person)
   end
-
-  def list_rentals_by_person_id(id)
-    puts "List Rentals by person id: #{id}"
-    sleep 2
-  end
 end
