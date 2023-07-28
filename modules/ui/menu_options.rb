@@ -1,5 +1,9 @@
 module MenuOptions
-  def get_options(type)
+  def get_options(type, custom_options)
+    options = custom_options.map { |e| e }
+    options << 'Return'
+    return options if type == :custom
+
     options = {
       main: [
         'List all [Book]s',
@@ -33,18 +37,20 @@ module MenuOptions
       persons: {
         '1' => :create_a_teacher,
         '2' => :create_a_student
-      }
+      },
+      custom: :select
     }
 
     actions[type]
   end
 
   def get_title(type)
+    return ' Select - Menu ' if type == :custom
+
     titles = {
       main: 'Start',
       persons: 'Create Person'
     }
-
     "[ #{titles[type]} - Menu ]"
   end
 end
