@@ -17,4 +17,8 @@ class Classroom
     @students.push(student)
     student.classroom = self
   end
+
+  def to_s
+    @label.ljust(10)
+  end
 end
