@@ -1,4 +1,4 @@
-require_relative '../decorator/nameable'
+require_relative '../decorators/nameable'
 require_relative 'rental'
 
 # ConcreteComponent 'Person' provide default implementations of the operations.
@@ -30,6 +30,31 @@ class Person < Nameable
 
   def add_rental(date, book)
     Rental.new(date, book, self)
+  end
+
+  def to_s
+    fields = []
+    fields << self.class.to_s.rjust(10)
+    fields << @id.to_s.rjust(6)
+    fields << @name.ljust(20)
+    fields << @age.to_s.rjust(3)
+    fields << @parent_permission.to_s.ljust(8)
+
+    fields.join(' | ')
+  end
+
+  def to_rental
+    "#{self.class}, #{@id.to_s.ljust(8)}, #{@name}"
+  end
+
+  def rentals?
+    !@rentals.empty?
+  end
+
+  def list_rentals
+    puts "[Rental]s for #{self.class}: #{@name} with id='#{@id}'"
+    puts '-' * 82
+    puts @rentals
   end
 
   private
