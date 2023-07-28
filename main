@@ -2,5 +2,5 @@
 
 require_relative 'classes/ui/app'
 
-library_manager = App.new()
-library_manager.run()
+library_manager = App.new
+library_manager.run
