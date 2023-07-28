@@ -14,4 +14,8 @@ class Rental
     @person = person
     @person.rentals << self unless @person.rentals.include?(self)
   end
+
+  def to_s
+    "#{@date.rjust(10)} | #{@book.to_rental.ljust(20)} | #{@person.to_rental.ljust(30)}"
+  end
 end
