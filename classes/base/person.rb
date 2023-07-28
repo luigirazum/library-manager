@@ -1,4 +1,4 @@
-require_relative 'nameable'
+require_relative '../decorator/nameable'
 require_relative 'rental'
 
 # ConcreteComponent 'Person' provide default implementations of the operations.
