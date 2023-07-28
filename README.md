@@ -309,8 +309,8 @@ To get a local copy of this project up and running, follow these steps.
     ```
 - ### Run
     In the `library-manager` folder, use the following code to run the app
-    ```rb
-    ruby main.rb
+    ```sh
+    ./main
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
