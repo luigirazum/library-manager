@@ -146,13 +146,80 @@ is a simple App created with Ruby using OOP (Object Oriented Programming) which 
     >```
   </details> <!-- #end-second-project-description-->
 
+  <details> <!-- #start-third-project-description-->
+    <summary>
+    #### 3️⃣ Set up <kbd>Associations</kbd>.
+    </summary>
+    Now, we are going to finish creating the remaining <kbd>Classes</kbd> for our **Ruby School Library App** and create the <kbd>Associations</kbd> between them.
+    #### ✳️ Create a class <kbd>Classroom</kbd> with the following:
+    - `@label` instance variable, should be initialized in the constructor.
+    - Setter and getter for `@label` (remember about `attr_accessor`).
+    #### ✳️ Create the `has-many`/`belongs-to` relationship between <kbd>Classroom</kbd> and <kbd>Student</kbd>.
+    The following should be implemented:
+    - Create the `has-many` side (a <kbd>Classroom</kbd> has many <kbd>Student</kbd>s).
+    - Create the `belongs-to` side (a <kbd>Student</kbd> belongs to a <kbd>Classroom</kbd>).
+    - Make sure that when adding a <kbd>Student</kbd> to a <kbd>Classroom</kbd> it also sets the <kbd>Classroom</kbd> for the <kbd>Student</kbd>.
+    - Make sure that when setting the <kbd>Classroom</kbd> for a <kbd>Student</kbd> it also adds it to the <kbd>Classroom</kbd>s' <kbd>Student</kbd>s.
+    #### ✳️ Create a class <kbd>Book</kbd> with the following:
+    - `@title` and `@author` instance variables, should be initialized in the constructor.
+    - Setters and getters for instance variables (remember about `attr_accessor`).
+    #### ✳️ Create a class <kbd>Rental</kbd> with the following:
+    - `@date` instance variable, should be initialized in the constructor.
+    - Setter and getter for `@date` (remember about `attr_accessor`).
+    #### ✳️ Create the `many-to-many` (also `has-many-through`) relationship between <kbd>Person</kbd> and <kbd>Book</kbd> using the intermediate class <kbd>Rental</kbd>.
+    The following should be implemented:
+    - Create the `has-many` side of <kbd>Book</kbd> and <kbd>Rental</kbd> (a <kbd>Book</kbd> has many <kbd>Rental</kbd>s).
+    - Create the `belongs-to` side of <kbd>Rental</kbd> and <kbd>Book</kbd> (a <kbd>Rental</kbd> belongs to a <kbd>Book</kbd>).
+    - Create the `has-many` side of <kbd>Person</kbd> and <kbd>Rental</kbd> (a <kbd>Person</kbd> has many <kbd>Rental</kbd>s).
+    - Create the `belongs-to` side of <kbd>Rental</kbd> and <kbd>Person</kbd> (a <kbd>Rental</kbd> belongs to a <kbd>Person</kbd>).
+    - Modify the constructor of <kbd>Rental</kbd> so <kbd>Book</kbd> and <kbd>Person</kbd> are set in it.
+    #### ✳️ See the <kbd>Associations</kbd> in action
+    A 'main.rb' was created on the 'root' folder, you can run it with `>ruby main.rb` to see how the associations work.
+    ```ruby
+    # a chemistry classroom is created
+    chemistry = Classroom.new('chemistry')
+
+    # a student is created, he is in chemistry classroom
+    student = Student.new(22, 'maximilianus', false, chemistry)
+
+    # a book1 is created, it hasn't been rented
+    book1 = Book.new('chemistry for nubbies', 'ruth green')
+
+    # a book2 is created, it hasn't been rented
+    book2 = Book.new('chemistry advanced', 'john fitzgerald')
+
+    # a teacher is created, with chemistry specialization
+    teacher = Teacher.new(22, 'mr. smith', 'chemistry')
+
+    # teacher rents book1 on may 25, 2023
+    teacher.add_rental('05/25/2023', book1)
+
+    # book2 is rented by student on may 25, 2023
+    book2.add_rental('05/25/2023', student)
+    ```
+    The result of the previous code once you ran it should be:
+    ```sh
+    ❯ ruby main.rb
+    ---- create a classroom ---
+    classroom: chemistry
+    classroom students: []
+
+    ---- create a student ---
+    student: maximilianus
+    student classroom: chemistry
+    student rentals: []
+
+    ...
+    ...
+    ```
+  </details> <!-- #end-third-project-description-->
+
   <details> <!-- #start-tobe-implemented-features-->
     <summary>
 
     #### 🧑‍💻 to be implemented Features
     </summary>
 
-    #### Project 3️⃣🔹Set up <kbd>Associations</kbd>.
     #### Project 4️⃣🔹Add basic UI.
     #### Project 5️⃣🔹 Refactoring the code.
     #### Project 6️⃣🔹Preserve data.
