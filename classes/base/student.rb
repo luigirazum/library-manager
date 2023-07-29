@@ -10,6 +10,7 @@ class Student < Person
   # is set with @classroom.students.push(self) unless @classroom.students.include?(self)
   def initialize(age, name, parent_permission)
     super(age, name, parent_permission: parent_permission)
+    @classroom = nil
   end
 
   def classroom=(classroom)
@@ -19,5 +20,9 @@ class Student < Person
 
   def play_hooky
     '¯\(ツ)/¯'
+  end
+
+  def to_s
+    "#{super} | #{@classroom}"
   end
 end

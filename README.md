@@ -5,6 +5,8 @@
   <img src="https://www.svgrepo.com/download/765/library.svg" alt="logo" width="100" height="auto" />
   <br/>
 
+  <div align="center"><hr width="250px"/></div>
+
 ### Libray Manager
 is a simple App created with Ruby using OOP (Object Oriented Programming) which enables you to record what books are in the library and who borrows them. The app allows you to:\
 1️⃣ Add new students or teachers.\
@@ -73,7 +75,7 @@ is a simple App created with Ruby using OOP (Object Oriented Programming) which 
 <!-- Features -->
 
 - ### Key Features <a name="key-features"></a>
-  We'll be building the "Ruby School Library" app according to the following list of projects that will guide you through the steps described above. The details about each of these projects will be added on every feature implementation.
+  We'll be building the **Library Manager** app according to the following list of projects that will guide you through the steps described above. The details about each of these projects will be added on every feature implementation.
 
   <details> <!-- #start-first-project-description-->
     <summary>
@@ -148,9 +150,10 @@ is a simple App created with Ruby using OOP (Object Oriented Programming) which 
 
   <details> <!-- #start-third-project-description-->
     <summary>
+
     #### 3️⃣ Set up <kbd>Associations</kbd>.
     </summary>
-    Now, we are going to finish creating the remaining <kbd>Classes</kbd> for our **Ruby School Library App** and create the <kbd>Associations</kbd> between them.
+    Now, we are going to finish creating the remaining <kbd>Classes</kbd> for our **Library Manager** and create the <kbd>Associations</kbd> between them.
     #### ✳️ Create a class <kbd>Classroom</kbd> with the following:
     - `@label` instance variable, should be initialized in the constructor.
     - Setter and getter for `@label` (remember about `attr_accessor`).
@@ -214,13 +217,55 @@ is a simple App created with Ruby using OOP (Object Oriented Programming) which 
     ```
   </details> <!-- #end-third-project-description-->
 
+  <details> <!-- #start-fourth-project-description-->
+    <summary>
+
+    #### 4️⃣ Add basic UI.
+    </summary>
+
+    This time we will create a form of <kbd>UI</kbd>(`User Interface`) for our **Library Manager**. This way it can be invoked as an **executable** and not something you use in `IRB` exclusively.
+    #### ✳️ Watch this <kbd>Console App Example</kbd>.
+    Our **Library Manager** should behave in the same way as in the following example.
+    ![UI example](assets/ruby-school-library-example.gif)
+    #### ✳️ The `entry-point`
+    - Create a `app.rb` file that will serve as your console app `entry-point`. It should have methods that do the following:
+      - List all <kbd>Book</kbd>s.
+      - List all people.
+      - Create a <kbd>Person</kbd> (<kbd>Teacher</kbd> or <kbd>Student</kbd>, not a plain <kbd>Person</kbd>).
+      - Create a <kbd>Book</kbd>.
+      - Create a <kbd>Rental</kbd>.
+      - List all <kbd>Rental</kbd>s for a given <kbd>Person</kbd> `@id`.
+    #### ✳️ The `script`
+    - In your `main.rb` define the `entry-point`, this will be a method called `main` that is invoked at the end of your file. This method should do the following:
+      - Present the user with a list of options to perform.
+      - Lets users choose an option.
+      - If needed, ask for parameters for the option.
+      - Have a way to quit the app.
+    #### ✳️ Starting the <kbd>UI</kbd>
+    - Run the app with the following `command`:
+      ```sh
+      > main
+      ```
+    - The app will show the main menu in the console
+      ```sh
+      Welcome! This is the 'Library Manager'
+      Please choose an option by entering a number:
+      1 - List all books
+      2 - List all people
+      3 - Create a person
+      4 - Create a book
+      5 - Create a rental
+      6 - List all rentals for a given person
+      7 - Exit
+      ```
+  </details> <!-- #end-fourth-project-description-->
+
   <details> <!-- #start-tobe-implemented-features-->
     <summary>
 
     #### 🧑‍💻 to be implemented Features
     </summary>
 
-    #### Project 4️⃣🔹Add basic UI.
     #### Project 5️⃣🔹 Refactoring the code.
     #### Project 6️⃣🔹Preserve data.
     #### Project 7️⃣🔹Unit Tests.
@@ -264,8 +309,8 @@ To get a local copy of this project up and running, follow these steps.
     ```
 - ### Run
     In the `library-manager` folder, use the following code to run the app
-    ```rb
-    ruby main.rb
+    ```sh
+    ./main
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

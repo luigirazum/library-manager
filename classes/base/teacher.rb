@@ -11,4 +11,8 @@ class Teacher < Person
   def use_services?
     true
   end
+
+  def to_s
+    "#{super} | #{@specialization.ljust(15)}"
+  end
 end
